@@ -67,10 +67,13 @@
 	<xacro:include filename="$(find robotnik_sensors)/urdf/all_sensors.urdf.xacro" />
 
 	<!-- Import bumblebee2 from the point_grey_bumblebee2 ros package (source) --> 
-        <xacro:include filename="$(find pointgrey_camera_description)/urdf/pointgrey_bumblebee2.urdf.xacro" />
+	<xacro:include filename="$(find pointgrey_camera_description)/urdf/pointgrey_bumblebee2.urdf.xacro" />
 
-    
-    <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
+	<!-- Import arm description -->
+	<xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
+
+	<!-- Import gripper description -->
+	<xacro:include filename="$(find robotiq_c2_model_visualization)/urdf/robotiq_c2_model.xacro" />
 
 	<!-- *************** -->
 	<!-- Robots Elements -->
@@ -141,15 +144,20 @@
           <child link="bumblebee2" />
         </joint>
 
-     <xacro:ur5_robot prefix="arm_" joint_limited="true">		
-     </xacro:ur5_robot>
+	<xacro:ur5_robot prefix="arm_" joint_limited="true">		
+	</xacro:ur5_robot>
 
-     <joint name="arm_base_joint" type="fixed">
+	<joint name="arm_base_joint" type="fixed">
           <origin xyz="0.175 0 0.303" rpy="0 0 0" />
           <parent link="base_link" />
           <child link="arm_base_link" />
-     </joint>
+	</joint>
 
-       
+	<joint name="gripper_joint" type="fixed">
+	  <origin xyz="0.0 0.0 0.0" rpy="0.0 -1.5708 0.0" />
+	  <parent link="arm_tool0" />
+	  <child link="robotiq_85_adapter_link" />
+	</joint>
+
 </robot>
 
