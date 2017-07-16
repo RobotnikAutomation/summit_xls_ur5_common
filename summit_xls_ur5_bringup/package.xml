@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package>
+  <name>summit_xls_ur5_bringup</name>
+  <version>1.0.0</version>
+  <description>
+    This package launches all the robot components
+  </description>
+  <maintainer email="info@robotnik.es">Robotnik</maintainer>
+  <license>BSD</license>
+
+  <url>http://ros.org/wiki/summit_xl_bringup</url>
+  <author>Robotnik</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend>message_runtime</build_depend>
+  <build_depend>std_msgs</build_depend>  
+  <build_depend>std_srvs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>tf</build_depend>
+  
+  <run_depend>message_runtime</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>std_srvs</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>tf</run_depend>
+     
+  <export>
+  </export>
+  
+</package>
+
+
+
