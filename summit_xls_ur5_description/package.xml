@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <name>summit_xls_ur5_description</name>
+  <version>0.0.0</version>
+  <description>The summit_xls_ur5_description package</description>
+
+  <maintainer email="info@robotnik.es">Robotnik</maintainer>
+
+  <license>BSD</license>
+
+  <author email="info@robotnik.es">Robotnik</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslaunch</build_depend>
+  <build_depend>urdf</build_depend>
+  <build_depend>xacro</build_depend>
+  <build_depend>robotnik_sensors</build_depend>
+  <build_depend>summit_xl_description</build_depend>
+  <build_depend>ur_description</build_depend>
+  <run_depend>roslaunch</run_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>xacro</run_depend>
+  <run_depend>robotnik_sensors</run_depend>
+  <run_depend>summit_xl_description</run_depend>
+  <run_depend>ur_description</run_depend>
+
+</package>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<robot name="summit_xls_ur5" xmlns:xacro="http://www.ros.org/wiki/xacro"> 
+
+	<!-- Version 1.0 -->
+	<!-- ***************** -->
+	<!-- Global parameters -->
+	<!-- ***************** -->
+  
+	<xacro:property name="PI" value="3.1415926535897931"/>
+
+	<xacro:property name="base_arm_x" value="0.175"/>
+	<xacro:property name="base_arm_y" value="0.0"/>
+	<xacro:property name="base_arm_z" value="0.303"/>
+	  
+	<!-- Flag to select the high or low quality model -->
+	<xacro:property name="hq" value="true" />
+	
+	<!-- Import Summit XL Steel -->
+	<xacro:include filename="$(find summit_xl_description)/robots/summit_xl_hls_omni.urdf.xacro"/>
+
+	<!-- Import UR5 arm -->
+	<xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
+
+	<!-- SENSORS -->
+    <!-- xacro:sensor_sick_s300 name="laser_front" parent="base_link">
+		<origin xyz="${front_laser_offset_x} ${front_laser_offset_y} ${front_laser_offset_z}" rpy="0 0 ${-PI/4.0}"/>
+	</xacro:sensor_sick_s300 -->
+    
+    <!-- xacro:BB2-08S2C-38 frame="bumblebee2" name="bumblebee2" />
+		<joint name="world_camera_joint" type="fixed">
+			<origin xyz="0.325 0 0.210" rpy="0 0 0" />
+            <parent link="base_link" />
+         <child link="bumblebee2" />
+    </joint -->
+
+	<!-- UR5 Arm -->
+    <xacro:ur5_robot prefix="arm_" joint_limited="true">		
+    </xacro:ur5_robot>
+
+    <joint name="arm_base_joint" type="fixed">
+		<origin xyz="0.175 0 0.303" rpy="0 0 0" />
+		<parent link="base_link" />
+		<child link="arm_base_link" />
+	</joint>
+	   
+</robot>
+
