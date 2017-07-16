@@ -159,5 +159,23 @@
 	  <child link="robotiq_85_adapter_link" />
 	</joint>
 
+	<joint name="tcp_joint" type="fixed">
+	  <origin xyz="0.150 0.0 0.0" rpy="0.0 0.0 0.0" />
+	  <parent link="robotiq_85_adapter_link"/>
+          <child link="tcp_link"/>
+        </joint>
+
+        <link name="tcp_link">
+          <visual>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+             <sphere radius="0.010"/>
+          </geometry>
+          <material name="green">
+            <color rgba="0 1 0 1"/>
+          </material>
+          </visual>
+        </link>
+
 </robot>
 
