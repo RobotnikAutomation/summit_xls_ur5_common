@@ -1,10 +1,10 @@
 moveit_setup_assistant_config:
   URDF:
     package: summit_xls_ur5_description
-    relative_path: robots/summit_xls_omni_ur5_170214A.urdf.xacro
+    relative_path: robots/summit_xls_ur5_omni_170214A.urdf.xacro
   SRDF:
     relative_path: config/summit_xl.srdf
   CONFIG:
     author_name: Robotnik
     author_email: info@robotnik.es
-    generated_timestamp: 1500239561
+    generated_timestamp: 1500240964
