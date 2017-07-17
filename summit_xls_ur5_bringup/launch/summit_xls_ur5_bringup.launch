@@ -10,13 +10,21 @@
   </include>
 
   <!-- Mobile Robot Startup -->
-  <include file="$(find summit_xls_ur5_bringup)/launch/summit_xls_complete.launch"/>
-
+  <!-- include file="$(find summit_xls_ur5_bringup)/launch/summit_xls_complete.launch"/ -->
+  
   <!-- Robot Arm Controller -->
-  <include file="$(find ur_modern_driver)/launch/ur5_ros_control.launch"/>
+  <include file="$(find summit_xls_ur5_bringup)/launch/ur5_bringup_hw.launch">
+        <arg name="robot_ip" value="192.168.0.210"/>
+        <arg name="reverse_port" value="50001"/>
+	<arg name="prefix" value="arm_"/>
+  </include>
+
+  <include file="$(find summit_xls_ur5_bringup)/launch/ur5_controllers.launch">
+	<arg name="prefix" value="arm_"/>
+  </include>
 
   <!-- Gripper Controller -->
   <!--  rosrun robotiq_c_model_control CModelRtuNode.py /dev/ttyUSB0  -->
-  <node name="robotiq_c_model_control" pkg="robotiq_c_model_control" type="CModelRtuNode.py" args="/dev/ttyUSB0" />
+  <!-- node name="robotiq_c_model_control" pkg="robotiq_c_model_control" type="CModelRtuNode.py" args="/dev/ttyUSB_ROBOTIQ" / -->
 
 </launch>
