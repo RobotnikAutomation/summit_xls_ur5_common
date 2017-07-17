@@ -1,0 +1,13 @@
+# Settings for ros_control control loop
+hardware_control_loop:
+   loop_hz: 125
+
+# Settings for ros_control hardware interface
+hardware_interface:
+   joints:
+     - arm_shoulder_pan_joint
+     - arm_shoulder_lift_joint
+     - arm_elbow_joint
+     - arm_wrist_1_joint
+     - arm_wrist_2_joint
+     - arm_wrist_3_joint
