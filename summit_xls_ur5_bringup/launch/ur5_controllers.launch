@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="prefix" />
+  <!-- Load controller settings -->
+  <rosparam file="$(find summit_xls_ur5_bringup)/config/$(arg prefix)controllers.yaml" command="load"/>
+
+  <!-- spawn controller manager -->
+  <node name="$(arg prefix)controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args="$(arg prefix)joint_state_controller $(arg prefix)pos_based_pos_traj_controller --shutdown-timeout 1" />
+
+</launch>
