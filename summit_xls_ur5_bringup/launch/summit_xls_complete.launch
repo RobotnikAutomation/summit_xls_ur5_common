@@ -18,7 +18,7 @@
   </include>
 
   <!-- start high level kinematic control -->
-  <include file="$(find summit_xl_bringup)/launch/summit_xl_control.launch" />
+  <!-- include file="$(find summit_xl_bringup)/launch/summit_xls_control.launch" / -->
 
   <!-- start orbecc camera -->
   <!--include file="$(find summit_xl_bringup)/launch/orbbec.launch" /-->

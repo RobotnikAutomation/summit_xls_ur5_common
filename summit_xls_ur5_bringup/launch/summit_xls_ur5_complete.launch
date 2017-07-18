@@ -2,29 +2,29 @@
 <launch>
 
   <!-- arg name="robot_model"  default="$(env ROBOT_MODEL)"  doc="Different robot models: ('')"/ -->
-
   <!-- start robot_state_publisher - publish fixed transforms, load robot model to param server -->
   <include file="$(find summit_xls_ur5_description)/launch/summit_xls_ur5_state_robot.launch">
-        <!-- arg name="robot_model"   value="$(arg robot_model)"/ -->
         <arg name="robot_model" value="_omni_170214A" />
   </include>
 
   <!-- Mobile Robot Startup -->
-  <!-- include file="$(find summit_xls_ur5_bringup)/launch/summit_xls_complete.launch"/ -->
+  <!-- Start mobile robot platform Summit Steel + sensors -->
+  <!-- summit_xls_control.launch is launched later to allow hw to be ready -->
+  <include file="$(find summit_xls_ur5_bringup)/launch/summit_xls_complete.launch"/>
   
-  <!-- Robot Arm Controller -->
-  <include file="$(find summit_xls_ur5_bringup)/launch/ur5_bringup_hw.launch">
+  <!-- Robot Arm Hw Controller -->
+  <!-- include file="$(find summit_xls_ur5_bringup)/launch/ur5_bringup_hw.launch">
         <arg name="robot_ip" value="192.168.0.210"/>
         <arg name="reverse_port" value="50001"/>
 	<arg name="prefix" value="arm_"/>
-  </include>
+  </include -->
 
-  <include file="$(find summit_xls_ur5_bringup)/launch/ur5_controllers.launch">
+  <!-- Robot Arm Ros Controller -->
+  <!-- include file="$(find summit_xls_ur5_bringup)/launch/ur5_controllers.launch">
 	<arg name="prefix" value="arm_"/>
-  </include>
+  </include -->
 
   <!-- Gripper Controller -->
-  <!--  rosrun robotiq_c_model_control CModelRtuNode.py /dev/ttyUSB0  -->
   <!-- node name="robotiq_c_model_control" pkg="robotiq_c_model_control" type="CModelRtuNode.py" args="/dev/ttyUSB_ROBOTIQ" / -->
 
 </launch>
