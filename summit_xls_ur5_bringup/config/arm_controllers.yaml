@@ -1,9 +1,9 @@
 # Settings for ros_control control loop
-hardware_control_loop:
+arm_hardware_control_loop:
    loop_hz: 125
 
 # Settings for ros_control hardware interface
-hardware_interface:
+arm_hardware_interface:
    joints:
      - arm_shoulder_pan_joint
      - arm_shoulder_lift_joint
@@ -26,6 +26,7 @@ arm_force_torque_sensor_controller:
 # For detailed explanations of parameter see http://wiki.ros.org/joint_trajectory_controller
 arm_pos_based_pos_traj_controller:
    type: position_controllers/JointTrajectoryController
+   action_ns: follow_joint_trajectory
    joints:
      - arm_shoulder_pan_joint
      - arm_shoulder_lift_joint
