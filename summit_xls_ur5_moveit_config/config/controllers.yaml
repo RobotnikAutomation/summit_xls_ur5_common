@@ -1,5 +1,5 @@
 controller_list:
-  - name: "/controller_manager/pos_based_pos_traj_controller"
+  - name: arm_pos_based_pos_traj_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     joints:
