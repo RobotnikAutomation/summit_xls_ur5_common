@@ -8,23 +8,13 @@
   </include>
 
   <!-- Mobile Robot Startup -->
-  <!-- Start mobile robot platform Summit Steel + sensors -->
-  <!-- summit_xls_control.launch is launched later to allow hw to be ready -->
-  <include file="$(find summit_xls_ur5_bringup)/launch/summit_xls_complete.launch"/>
+  <!-- Start mobile robot platform Summit Steel + sensors + hw controller -->
+  <include file="$(find summit_xls_ur5_bringup)/launch/summit_xls_rover.launch"/>
   
-  <!-- Robot Arm Hw Controller -->
-  <!-- include file="$(find summit_xls_ur5_bringup)/launch/ur5_bringup_hw.launch">
-        <arg name="robot_ip" value="192.168.0.210"/>
-        <arg name="reverse_port" value="50001"/>
-	<arg name="prefix" value="arm_"/>
-  </include -->
-
-  <!-- Robot Arm Ros Controller -->
-  <!-- include file="$(find summit_xls_ur5_bringup)/launch/ur5_controllers.launch">
-	<arg name="prefix" value="arm_"/>
-  </include -->
+  <!-- Mobile Robot Control -->
+  <!-- include file="$(find summit_xl_bringup)/launch/summit_xls_control.launch"/ -->
 
   <!-- Gripper Controller -->
-  <!-- node name="robotiq_c_model_control" pkg="robotiq_c_model_control" type="CModelRtuNode.py" args="/dev/ttyUSB_ROBOTIQ" / -->
+  <node name="robotiq_c_model_control" pkg="robotiq_c_model_control" type="CModelRtuNode.py" args="/dev/ttyUSB_ROBOTIQ" />
 
 </launch>
