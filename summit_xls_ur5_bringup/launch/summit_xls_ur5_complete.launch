@@ -17,4 +17,7 @@
   <!-- Gripper Controller -->
   <node name="robotiq_c_model_control" pkg="robotiq_c_model_control" type="CModelRtuNode.py" args="/dev/ttyUSB_ROBOTIQ" />
 
+  <!-- Gripper State Publisher -->
+  <node name="robotiq_c_state_publisher" pkg="summit_xls_ur5_bringup" type="CModelStatusPublisher.py" />
+
 </launch>
