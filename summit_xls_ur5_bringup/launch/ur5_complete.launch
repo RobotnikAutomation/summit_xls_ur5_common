@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Robot Arm Hw Controller -->
+  <include file="$(find summit_xls_ur5_bringup)/launch/ur5_bringup_hw.launch">
+        <arg name="robot_ip" value="192.168.0.210"/>
+        <arg name="reverse_port" value="50001"/>
+        <arg name="prefix" value="arm_"/>
+  </include>
+
+  <!-- Robot Arm Ros Controller -->
+  <include file="$(find summit_xls_ur5_bringup)/launch/ur5_controllers.launch">
+        <arg name="prefix" value="arm_"/>
+  </include>
+
+</launch>
