@@ -18,6 +18,7 @@
       <node pkg="nodelet" type="nodelet" name="camera_nodelet"
             args="load pointgrey_camera_driver/PointGreyCameraNodelet camera_nodelet_manager" >
         <param name="frame_id" value="camera_left" />
+        <!-- param name="frame_id" value="bumblebee2_optical"/ -->
         <param name="serial" value="$(arg left_camera_serial)" />
 
         <!-- When unspecified, the driver will use the default framerate as given by the
@@ -41,6 +42,7 @@
       <node pkg="nodelet" type="nodelet" name="camera_nodelet"
             args="load pointgrey_camera_driver/PointGreyCameraNodelet camera_nodelet_manager" >
         <param name="frame_id" value="camera_right" />
+        <!-- param name="frame_id" value="bumblebee2_optical" / -->
         <param name="serial" value="$(arg right_camera_serial)" />
 
         <!-- When unspecified, the driver will use the default framerate as given by the
